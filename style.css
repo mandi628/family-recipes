@@ -1,0 +1,88 @@
+* {
+    font-family: Garamond, Georgia, serif;
+    background-color: lavender;
+    border: 0px solid lightgray;
+}
+
+a:link {
+    color: purple;
+    text-decoration: none;
+}
+
+a:visited {
+    color: purple;
+}
+
+h1 {
+    text-align: center;
+    color: darkred;
+}
+
+h2 {
+    text-align: left;
+    text-decoration: underline;
+}
+
+div {
+    margin: 0 auto;
+    width: 760px;
+    max-width: 760px;
+}
+
+nav {
+    display: block;
+    margin: auto;
+    background-color: purple;
+    color: lavender;
+    font-size: 24px;
+    padding: 15px;
+    text-align:center;
+}
+
+.body {
+    box-sizing: border-box;
+    display: block;
+}
+
+.image {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.menu {
+    padding: 4px;
+    margin: 20px;
+    text-align: center;
+}
+
+.menu:hover {
+    background-color: purple;
+    color: white;
+}
+
+.description {
+    display:block;
+    box-sizing: border-box;
+    width: 760px;
+    margin: 0 auto;
+    padding: 8px;
+    padding-bottom: 15px;
+}
+
+.ingredients {
+    display:inline-block;
+    box-sizing: border-box;
+    width:29%;
+    padding:8px;
+}
+
+.steps {
+    display:inline-block;
+    box-sizing: border-box;
+    width:69%;
+    padding:8px;
+}
+
