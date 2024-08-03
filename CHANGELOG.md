@@ -29,6 +29,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Removed
 
+## [2.0.2] - 2024.08.03
+
+### Added
+
+- Mayonnaise recipe (linked on basics.html & remedies.html)
+- Create pages from index page menu (mexican.html, asian.html, vegetarian.html, remedies.html, nonedible.html, menus.html)
+- Search bar & improved top-page navigation
+
 ## [2.0.1] - 2024.08.02
 
 ### Added
