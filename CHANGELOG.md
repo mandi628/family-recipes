@@ -12,7 +12,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Add Snacks sub-category
 - Grandma's Rice Pudding (recipes/rice-pudding.html)
 - Hot Rice Cereal (recipes/hot-rice-cereal.html)
-- Sourdough Starter (from TiddlyWiki)
 - Beauty Mayo (from TiddlyWiki)
 - Vegetarian Lentil Meatballs (from TiddlyWiki)
 - Yogurt (from TiddlyWiki)
@@ -24,9 +23,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Adjust styling for update notification at bottom of each page
 - Correct image for recipes/rice.html
 - Adjust flex width for pages to fit to window width
-- Modify source & citation styling.
+- Modify source & citation styling
+- Include links to related recipes
+- Improve sources on Sourdough Starter page (recipes/starter.html)
 
 ### Removed
+
+## [2.0.1] - 2024.08.02
+
+### Added
+
+- Add Sourdough Starter recipe (recipes/starter.html)
+
+### Changed
+
+- Improved nav on index & basics pages
 
 ## [2.0.0] - 2024.08.02
 
