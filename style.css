@@ -40,10 +40,33 @@ nav {
 }
 
 form {
+    text-align: left;
     display: block;
-    max-width: 80%;
+    width: 80%;
     margin: auto;
-    background-color: purple;
+    padding: 20px;
+}
+
+button {
+    padding: 10px;
+    font-size: 24px;
+}
+
+textarea {
+    height: 100px;
+    width: 70%;
+}
+
+.label {
+    font-weight: bold;
+    height: 20px;
+    width: 50px;
+}
+
+.input {
+    font-size: 12px;
+    height: 20px;
+    width: 100px;
 }
 
 .body {
@@ -105,6 +128,7 @@ form {
 .topnav {
     overflow: hidden;
     background-color: purple;
+    max-width: 80%;
 }
 
 /* Style the links inside the navigation bar */
