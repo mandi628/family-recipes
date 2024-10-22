@@ -29,6 +29,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Removed
 
+## [2.0.1] - 2024.10.22
+
+### Added
+
+- Links.html page for reference to recipes I want to try
+
+### Changed
+
+- Added stylesheet link to W3.CSS for all pages
+
 ## [2.0.2] - 2024.08.03
 
 ### Added
