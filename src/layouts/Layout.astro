@@ -1,0 +1,49 @@
+---
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} | Aumann Family Recipes</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <aside class="sidebar">
+            <h1><a href="/">Aumann Family Recipes</a></h1>
+            <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/main-dishes/">Main Dishes</a></li>
+                <li><a href="/side-dishes/">Side Dishes</a></li>
+                <li><a href="/soups-stews/">Soups & Stews</a></li>
+                <li><a href="/breads/">Breads</a></li>
+                <li><a href="/breakfast/">Breakfast</a></li>
+                <li><a href="/sweets-treats/">Sweets & Treats</a></li>
+                <li><a href="/menus/">Menus</a></li>
+                <li><a href="/sources/">Sources</a></li>
+                <li><a href="/notes/">Notes</a></li>
+                <li><a href="/updates/">Updates</a></li>
+                <li><a href="/tags/">All Tags</a></li>
+            </ul>
+            </nav>
+            <footer>
+                <p>A family recipe collection.</p>
+            </footer>
+        </aside>
+        <div class="main-content">
+            <header>
+                <h2>{title}</h2>
+            </header>
+            <main><slot /></main>
+        </div>
+    </body>
+</html>

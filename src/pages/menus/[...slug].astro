@@ -1,0 +1,28 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const menus = await getCollection('menus');
+  return menus.map(menu => ({
+    params: { slug: menu.slug },
+    props: { menu },
+  }));
+}
+
+const { menu } = Astro.props;
+const { Content } = await menu.render();
+
+// Get the full recipe data for the linked recipes
+const recipes = await Promise.all(menu.data.recipes.map(recipe => getEntry(recipe)));
+---
+<Layout title={menu.data.title}>
+    <article>
+        <h2>{menu.data.title}</h2>
+        <Content />
+        <h3>Recipes in this Menu:</h3>
+        <ul>
+            {recipes.map(recipe => recipe && <li><a href={`/recipes/${recipe.slug}/`}>{recipe.data.title}</a></li>)}
+        </ul>
+    </article>
+</Layout>

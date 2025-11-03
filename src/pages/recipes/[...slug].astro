@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes');
+  return recipes.map(recipe => ({
+    params: { slug: recipe.slug },
+    props: recipe,
+  }));
+}
+
+const recipe = Astro.props;
+const { Content } = await recipe.render();
+---
+<Layout title={recipe.data.title}>
+    <article>
+        <h2>{recipe.data.title}</h2>
+        {recipe.data.tags && recipe.data.tags.length > 0 && (
+            <div class="tags-container">
+                <strong>Tags:</strong>
+                {recipe.data.tags.map(tag => (
+                    <a href={`/tags/${tag}/`} class="tag-pill">{tag}</a>
+                ))}
+            </div>
+        )}
+        <Content />
+    </article>
+</Layout>
+
+<style>
+    .tags-container {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee8d5;
+    }
+    .tags-container strong {
+        margin-right: 0.5rem;
+    }
+</style>

@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const allMenus = await getCollection('menus');
+---
+<Layout title="All Menus">
+    <h2>All Menus</h2>
+    <ul>
+        {allMenus.map(menu => (
+            <li><a href={`/menus/${menu.slug}/`}>{menu.data.title}</a></li>
+        ))}
+    </ul>
+</Layout>

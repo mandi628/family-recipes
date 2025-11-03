@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const allRecipes = await getCollection('recipes');
+  const uniqueTags = [...new Set(allRecipes.flatMap(recipe => recipe.data.tags))];
+
+  return uniqueTags.map(tag => {
+    return {
+      params: { tag: tag },
+      props: { tag: tag }
+    };
+  });
+}
+
+const { tag } = Astro.props;
+
+const recipesWithTag = await getCollection('recipes', ({ data }) => {
+  return data.tags.includes(tag);
+});
+---
+<Layout title={`Recipes tagged with "${tag}"`}>
+  <h2>Recipes tagged with "{tag}"</h2>
+  <ul>
+    {recipesWithTag.map(recipe => (
+      <li><a href={`/recipes/${recipe.slug}/`}>{recipe.data.title}</a></li>
+    ))}
+  </ul>
+</Layout>

@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const recipes = await getCollection('recipes', ({ data }) => data.tags?.includes("Cats"));
+recipes.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+<Layout title={"Pet Recipes"}>
+    <h2>Pet Recipes</h2>
+    <ul>{recipes.map(recipe => <li><a href={`/recipes/${recipe.slug}/`}>{recipe.data.title}</a></li>)}</ul>
+</Layout>

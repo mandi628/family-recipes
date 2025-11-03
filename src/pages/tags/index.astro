@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// 1. Get all recipes
+const allRecipes = await getCollection('recipes');
+
+// 2. Get all unique tags and sort them
+const allTags = [...new Set(allRecipes.flatMap(recipe => recipe.data.tags))].sort((a, b) => a.localeCompare(b));
+---
+<Layout title="All Recipe Tags">
+  <h2>All Tags</h2>
+  <div class="tag-cloud">
+    {allTags.map(tag => (
+      <a href={`/tags/${tag}/`} class="tag-pill">{tag}</a>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+</style>

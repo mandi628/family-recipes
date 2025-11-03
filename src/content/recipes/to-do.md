@@ -1,0 +1,35 @@
+---
+title: "To Do"
+tags: []
+created: "20250118131203996"
+modified: "20250912214623910"
+---
+
+* [Hot Rice Cereal](Hot Rice Cereal.html)
+* [Sourdough English Muffins](Sourdough English Muffins.html)
+* [Clay Hair Wash](Clay Hair Wash.html)
+* [Mozzarella Cheese](Mozzarella Cheese.html) https://www.inthekitchenwithmatt.com/homemade-mozzarella-cheese#wprm-recipe-container-16378
+* [Cottage Cheese](Cottage Cheese.html) https://thegoodoldway.com/homemade-cottage-cheese/
+* [Saltine Crackers](Saltine Crackers.html) https://www.restlesschipotle.com/saltines/
+* [Vanilla Custard](Vanilla Custard.html) https://www.spendwithpennies.com/custard/
+* [Butter Crackers](Butter Crackers.html) - like Ritz
+* [Fancy Carrot Cake](Fancy Carrot Cake.html) - with raisins, crushed pineapple, and pecans
+* [Quick & Easy Vegetarian Curry](Quick & Easy Vegetarian Curry.html) https://www.familyfoodonthetable.com/quick-easy-vegetarian-curry-15-minutes/
+* [Easy Chickpea Burgers](Easy Chickpea Burgers.html) https://www.familyfoodonthetable.com/easy-chickpea-burgers/
+* recipes from Thee Burger Dude website
+* Create weekly menus
+* Soap Notes
+** [Castile Soap Bars](Castile Soap Bars.html) [Castile Soap from Scratch](https://korenhelbig.com/homemade-soap-traditional-castile/.html) - bars of homemade Castile soap
+* [Chicken & Dumplings](Chicken & Dumplings.html) & [Chicken(not) & Dumplings](Chicken(not) & Dumplings.html)
+* [TVP](TVP.html)
+* [Tofu](Tofu.html)
+* [Kutletky](Kutletky.html) from Nana
+* [Nalysnyky](Nalysnyky.html), or Crepes
+* [Holubtsi](Holubtsi.html) and [Lazy Day Holubtsi](Lazy Day Holubtsi.html)
+* [Parson's Cake](Parson's Cake.html) from Grandma Aumann
+* [24-Hour Salad](24-Hour Salad.html) from Grandma Aumann
+* [Refrigerator Pickles](Refrigerator Pickles.html) from Grandma Saidat
+* [Fruit Crisp](Fruit Crisp.html) from Grandma Saidat
+
+
+Updated: 2025.03.09 ama

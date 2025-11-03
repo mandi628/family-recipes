@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const allUpdates = await getCollection('updates', ({ data }) => {
+    return data.title.startsWith('v');
+});
+allUpdates.sort((a, b) => b.data.title.localeCompare(a.data.title));
+---
+<Layout title="Updates">
+    <h2>Updates</h2>
+    {allUpdates.map(update => <li><a href={`/updates/${update.slug}/`}>{update.data.title}</a></li>)}
+</Layout>

@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const updates = await getCollection('updates');
+  return updates.map(update => ({
+    params: { slug: update.slug },
+    props: update,
+  }));
+}
+
+const update = Astro.props;
+const { Content } = await update.render();
+---
+<Layout title={update.data.title}>
+    <article><h2>{update.data.title}</h2><Content /></article>
+</Layout>
