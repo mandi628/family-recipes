@@ -4,6 +4,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+import Search from '../components/Search.astro';
 ---
 <!doctype html>
 <html lang="en">
@@ -19,6 +20,7 @@ const { title } = Astro.props;
     <body>
         <aside class="sidebar">
             <h1><a href="/">Aumann Family Recipes</a></h1>
+            <Search />
             <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -28,6 +30,7 @@ const { title } = Astro.props;
                 <li><a href="/breads/">Breads</a></li>
                 <li><a href="/breakfast/">Breakfast</a></li>
                 <li><a href="/sweets-treats/">Sweets & Treats</a></li>
+                <li><a href="/basics/">Basics</a></li>
                 <li><a href="/menus/">Menus</a></li>
                 <li><a href="/sources/">Sources</a></li>
                 <li><a href="/notes/">Notes</a></li>
@@ -44,6 +47,9 @@ const { title } = Astro.props;
                 <h2>{title}</h2>
             </header>
             <main><slot /></main>
+            <footer>
+                <p>Family Recipes, v2.0, <a href="emailto:mandi628.codes@gmail.com">mandi628</a>. Updated 2025.11.04.</p>
+            </footer>
         </div>
     </body>
 </html>
