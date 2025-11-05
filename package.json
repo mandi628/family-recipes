@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build-index": "node ./create-search-index.js",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -22,6 +23,10 @@
   },
   "homepage": "https://github.com/mandi628/family-recipes#readme",
   "devDependencies": {
-    "astro": "^4.11.5"
+    "astro": "^4.11.5",
+    "gray-matter": "^4.0.3"
+  },
+  "dependencies": {
+    "fuse.js": "^7.0.0"
   }
 }

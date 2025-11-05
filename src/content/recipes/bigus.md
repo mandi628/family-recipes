@@ -1,6 +1,6 @@
 ---
 title: "Bigus"
-tags: ["Ukrainian","Dinner","[[Main","Dishes]]","Vegetarian"]
+tags: ["Ukrainian","Dinner","Main Dishes","Vegetarian"]
 created: "20250118132950725"
 modified: "20250912212627165"
 ---

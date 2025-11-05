@@ -1,6 +1,6 @@
 ---
 title: "Cheese Fritters"
-tags: ["Vegetarian","[[Moon","Energy]]","[[Side","Dishes]]"]
+tags: ["Vegetarian","Moon Energy","Side Dishes"]
 created: "20250212172011437"
 modified: "20250213024337832"
 ---

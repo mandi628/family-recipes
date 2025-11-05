@@ -1,60 +1,23 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import { UNTAGGED_CATEGORY } from '../consts';
 
-const allRecipes = await getCollection('recipes');
-
-// Create a map to hold recipes by tag
-const recipesByTag = new Map<string, any[]>();
-
-for (const recipe of allRecipes) {
-  if (recipe.data.tags && recipe.data.tags.length > 0) {
-    for (const tag of recipe.data.tags) {
-      if (!recipesByTag.has(tag)) {
-        recipesByTag.set(tag, []);
-      }
-      recipesByTag.get(tag)?.push(recipe);
-    }
-  } else {
-    // Handle untagged recipes
-    if (!recipesByTag.has(UNTAGGED_CATEGORY)) {
-      recipesByTag.set(UNTAGGED_CATEGORY, []);
-    }
-    recipesByTag.get(UNTAGGED_CATEGORY)?.push(recipe);
-  }
-}
-
-// Sort the tags alphabetically for consistent order
-const sortedTags = [...recipesByTag.keys()].sort((a, b) => a.localeCompare(b));
+const categories = [
+    { name: "Main Dishes", href: "/main-dishes/" },
+    { name: "Side Dishes", href: "/side-dishes/" },
+    { name: "Soups & Stews", href: "/soups-stews/" },
+    { name: "Breads", href: "/breads/" },
+    { name: "Breakfast", href: "/breakfast/" },
+    { name: "Sweets & Treats", href: "/sweets-treats/" }
+];
 ---
-<Layout title="All Recipes">
-    <div class="recipe-grid">
-        {sortedTags.map(tag => (
-            <section>
-                <h2>
-                    {tag !== UNTAGGED_CATEGORY ? <a href={`/tags/${tag}/`}>{tag}</a> : tag}
-                </h2>
-                <ul>
-                    {recipesByTag.get(tag)?.sort((a,b) => a.data.title.localeCompare(b.data.title)).map(recipe => (
-                        <li><a href={`/recipes/${recipe.slug}/`}>{recipe.data.title}</a></li>
-                    ))}
-                </ul>
-            </section>
+<Layout title="Home">
+    <p>Welcome to our family recipe collection! This is a place to store and share the recipes that have been part of our family for generations, as well as new favorites we've discovered along the way.</p>
+    <p>Feel free to browse by category, or use the navigation on the side to explore.</p>
+    
+    <h2>Recipe Categories</h2>
+    <ul>
+        {categories.map(category => (
+            <li><a href={category.href}>{category.name}</a></li>
         ))}
-    </div>
+    </ul>
 </Layout>
-
-<style>
-    .recipe-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0 2rem;
-    }
-
-    @media (min-width: 768px) {
-        .recipe-grid {
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-</style>

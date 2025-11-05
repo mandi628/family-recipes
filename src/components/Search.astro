@@ -1,0 +1,96 @@
+---
+// src/components/Search.astro
+---
+<div class="search-container">
+    <input type="text" id="search-input" placeholder="Search recipes..." />
+    <ul id="search-results"></ul>
+</div>
+
+<style>
+    .search-container {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+    #search-input {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    #search-results {
+        list-style: none;
+        padding: 0;
+        margin: 0.5rem 0 0 0;
+        max-height: 200px;
+        overflow-y: auto;
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        position: absolute;
+        width: 100%;
+        z-index: 10;
+    }
+    #search-results li {
+        padding: 0.5rem;
+        border-bottom: 1px solid #eee;
+    }
+    #search-results li:last-child {
+        border-bottom: none;
+    }
+    #search-results li a {
+        text-decoration: none;
+        color: #333;
+        display: block;
+    }
+    #search-results li:hover {
+        background-color: #f0f0f0;
+    }
+</style>
+
+<script>
+    import Fuse from 'fuse.js';
+
+    const searchInput = document.getElementById('search-input') as HTMLInputElement;
+    const searchResults = document.getElementById('search-results') as HTMLUListElement;
+    let fuse;
+
+    // Fetch the search index and initialize Fuse.js
+    fetch('/search-index.json')
+        .then(response => response.json())
+        .then(data => {
+            fuse = new Fuse(data, {
+                keys: ['title', 'tags', 'content'],
+                includeScore: true,
+                threshold: 0.4,
+            });
+        });
+
+    searchInput.addEventListener('input', () => {
+        const query = searchInput.value;
+        searchResults.innerHTML = '';
+
+        if (query.length < 2 || !fuse) {
+            searchResults.style.display = 'none';
+            return;
+        }
+
+        const results = fuse.search(query);
+        searchResults.style.display = results.length ? 'block' : 'none';
+
+        results.slice(0, 10).forEach(result => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `/recipes/${result.item.slug}`;
+            a.textContent = result.item.title;
+            li.appendChild(a);
+            searchResults.appendChild(li);
+        });
+    });
+
+    // Hide results when clicking outside
+    document.addEventListener('click', (event) => {
+        if (!searchInput.contains(event.target as Node)) {
+            searchResults.style.display = 'none';
+        }
+    });
+</script>
