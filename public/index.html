@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Aumann family recipes and notes" />
+    <title>Aumann Family Recipes</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="/">Aumann <span>Family Recipes</span></a>
+      <button class="button button-dark" id="new-entry-button" type="button">
+        Write an entry <span aria-hidden="true">+</span>
+      </button>
+    </header>
+    <main class="shell">
+      <section class="intro">
+        <p class="eyebrow">A living family archive</p>
+        <h1>Recipes worth<br /><em>passing on.</em></h1>
+        <p class="intro-copy">
+          A collection of favorite dishes, kitchen notes, and small household
+          wisdom gathered in one place.
+        </p>
+      </section>
+      <div class="toolbar">
+        <label class="search"
+          ><span aria-hidden="true">⌕</span
+          ><input
+            id="search-input"
+            type="search"
+            placeholder="Search recipes and notes"
+            autocomplete="off"
+        /></label>
+        <button class="filter-toggle" id="filter-toggle" type="button">
+          Browse <span>↓</span>
+        </button>
+      </div>
+      <div class="layout">
+        <aside class="sidebar" id="sidebar">
+          <div class="sidebar-group">
+            <p class="sidebar-label">Categories</p>
+            <nav id="category-list"></nav>
+          </div>
+          <div class="sidebar-group">
+            <p class="sidebar-label">Tags</p>
+            <nav class="tag-list" id="tag-list"></nav>
+          </div>
+        </aside>
+        <section class="content" aria-live="polite">
+          <div class="results-heading">
+            <p id="results-label">Latest entries</p>
+            <span id="results-count"></span>
+          </div>
+          <div class="entry-grid" id="entry-grid"></div>
+          <p class="empty-state" id="empty-state" hidden>
+            No entries match that search.
+          </p>
+        </section>
+      </div>
+    </main>
+    <dialog id="entry-dialog" class="entry-dialog">
+      <div class="dialog-head">
+        <p class="eyebrow" id="dialog-kicker">New entry</p>
+        <button
+          class="icon-button"
+          id="close-dialog"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+      </div>
+      <form id="entry-form">
+        <input id="entry-id" type="hidden" />
+        <label>Title<input id="entry-title" name="title" required /></label>
+        <div class="form-row">
+          <label
+            >Category<input
+              id="entry-category"
+              name="category"
+              placeholder="Recipes" /></label
+          ><label
+            >Tags<input
+              id="entry-tags"
+              name="tags"
+              placeholder="family, vegetarian"
+          /></label>
+        </div>
+        <label
+          >Entry<textarea
+            id="entry-content"
+            name="content"
+            rows="16"
+            required
+            placeholder="Write with simple headings, lists, and [[links]]..."
+          ></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="button button-quiet" id="cancel-entry" type="button">
+            Cancel</button
+          ><button class="button button-dark" type="submit">Save entry</button>
+        </div>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+      </form>
+    </dialog>
+    <template id="entry-template"
+      ><article class="entry-card">
+        <div class="entry-meta">
+          <span class="entry-category"></span><time></time>
+        </div>
+        <h2></h2>
+        <p class="entry-excerpt"></p>
+        <div class="entry-footer">
+          <span class="entry-tags"></span
+          ><button class="read-link" type="button">
+            Read entry <span>→</span>
+          </button>
+        </div>
+      </article></template
+    >
+  </body>
+</html>
