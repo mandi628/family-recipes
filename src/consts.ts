@@ -1,1 +1,0 @@
-export const UNTAGGED_CATEGORY = "Uncategorized";
