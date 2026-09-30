@@ -5,11 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project follows [Semantic Versioning](https://semver.org/).
 
-## [1.0.0] 2026.09.17 (In Progress)
+## [1.0.0] 2026.09.30 (In Progress)
 
 ### Changed
 
-    - Converted wiki to JavaScript based blog.
+    - Restored TiddlyWiki file and format.
 
 ## [0.2] 2025.09.25
 
